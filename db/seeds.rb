@@ -1,21 +1,25 @@
+require_relative('../models/house')
 require_relative('../models/student')
 require('pry-byebug')
 
 Student.delete_all()
+House.delete_all()
 
 student1 = Student.new({
   "first_name" => "Harry",
   "last_name" => "Potter",
-  "house" => "Gryffindor",
+  "house_id" => house1.id,
   "age" => 15
   })
 
 student2 = Student.new({
   "first_name" => "Hermione",
   "last_name" => "Granger",
-  "house" => "Gryffindor",
+  "house_id" => house2.id,
   "age" => 15
   })
+
+
 
 house1 = House.new({
   "name" => "Gryffindor"
