@@ -22,6 +22,16 @@ class Student
     @id = student_data.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE students SET 
+    first_name = '#{@first_name}', 
+    last_name = '#{@last_name}', 
+    house_id = #{@house_id}, 
+    age = #{@age} 
+    WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def house()
     sql = "SELECT * FROM houses WHERE id = #{@house_id}"
     result = SqlRunner.run(sql)
