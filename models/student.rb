@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Student
 
-  attr_accessor :id, :first_name, :last_name
+  attr_accessor :id, :first_name, :last_name, :house, :age
 
   def initialize( options )
     @id = options['id'].to_i
@@ -10,6 +10,10 @@ class Student
     @last_name = options['last_name']
     @house = options['house']
     @age = options['age'].to_i
+  end
+
+  def full_name()
+    return "#{@first_name} #{last_name}"
   end
 
   def save()

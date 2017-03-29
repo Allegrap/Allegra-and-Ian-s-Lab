@@ -17,3 +17,8 @@ post '/students' do
   @student.save()
   erb(:created)
 end
+
+get '/students/:id' do
+  @student = Student.find(params[:id])
+  erb(:show)
+end
